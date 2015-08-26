@@ -2,11 +2,8 @@
 tasks:
 - id: 1
   title: cleaning
-  description: weed the yard
-- id: 2
-  title: shopping
-  description: buy groceries
-- id: 3
-  title: pack
-  description: get ready for camping trip
-total: 3
+  description: weed, water, mow
+- id: 4
+  title: study
+  description: figure out bootstrap and css
+total: 4

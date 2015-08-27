@@ -1,9 +1,9 @@
 ---
 tasks:
-- id: 1
-  title: cleaning
-  description: weed, water, mow
 - id: 4
   title: study
   description: figure out bootstrap and css
-total: 4
+- id: 5
+  title: Exercise
+  description: "I need to run\r\n"
+total: 5

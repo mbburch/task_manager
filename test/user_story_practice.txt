@@ -1,0 +1,30 @@
+Adding a task to TaskManager
+Signing up for a new account
+Logging into account
+Viewing only the tasks associated with my account
+
+As a user
+When I go to the home page of TaskManager
+And I enter the title and description of my task in the form
+And I click the submit button
+Then my task is added to my TaskManager.
+
+As a user
+When I go to the home page of TaskManager
+And I click on the new account button
+Then I am taken to a form to create a new  account
+When I enter my name and email into the form and click submit
+Then my account is created and I am taken to my homepage.
+
+As a user
+When I go to the home page of TaskManager
+And I click on the button to log in
+And I enter my information in the drop down boxes
+And I click Log in
+Then I am logged into my account.
+
+As a user
+When I go to the home page of TaskManager
+When I click on the button for Task Index
+And I am taken to the task index page
+Then I only see tasks that I have created.

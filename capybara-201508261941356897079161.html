@@ -7,7 +7,6 @@
 
       <!-- My styles -->
       <link href="/css/styles.css" rel="stylesheet">
-      <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Raleway|Julius+Sans+One|Amatic+SC">
     </head>
 
     <body>
@@ -15,13 +14,30 @@
       <nav class='navbar navbar-default'>
         <div class='container'>
           <nav class='navbar-brand'>Task Manager</nav>
-          <a href="/" class="navbar-link navbar-text navbar-right">Home</a>
+          <a href="#" class="navbar-link navbar-text navbar-right">Home</a>
         </div>
       </nav>
 
       <div class='container'>
       <!-- container will give margin. use when you don't want full page width (navbar, etc outside of container) -->
-        <%= yield %>
+        <div class='container'>
+  <div class='well well-sm text-center'>
+    <h1>All Tasks</h1>
+  </div>
+
+  <div class='list-group'>
+    
+      <h3>1: <a href="/tasks/1" class='list-group-item'>New task</a></h3>
+      <a href='/tasks/1/edit' class='btn btn-success'>Edit</a>
+      <form action="/tasks/1" method="POST">
+        <input type="hidden" name="_method" value="DELETE">
+        <input type="submit" value="Delete"/>
+      </form>
+    
+  </div>
+
+</div>
+
 
       </div>
 

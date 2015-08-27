@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <title>Task Manager</title>
+      <!-- Bootstrap -->
+      <link href="/css/bootstrap.css" rel="stylesheet">
+
+      <!-- My styles -->
+      <link href="/css/styles.css" rel="stylesheet">
+    </head>
+
+    <body>
+      <!-- put navbar here for each page -->
+      <nav class='navbar navbar-default'>
+        <div class='container'>
+          <nav class='navbar-brand'>Task Manager</nav>
+          <a href="#" class="navbar-link navbar-text navbar-right">Home</a>
+        </div>
+      </nav>
+
+      <div class='container'>
+      <!-- container will give margin. use when you don't want full page width (navbar, etc outside of container) -->
+        <div class='container'>
+  <div class='well well-sm text-center'>
+    <h1>All Tasks</h1>
+  </div>
+
+  <div class='list-group'>
+    
+      <h3>1: <a href="/tasks/1" class='list-group-item'>New task</a></h3>
+      <a href='/tasks/1/edit' class='btn btn-success'>Edit</a>
+      <form action="/tasks/1" method="POST">
+        <input type="hidden" name="_method" value="DELETE">
+        <input type="submit" class='btn btn-warning' value="Delete"/>
+      </form>
+    
+      <h3>2: <a href="/tasks/2" class='list-group-item'>Another new task</a></h3>
+      <a href='/tasks/2/edit' class='btn btn-success'>Edit</a>
+      <form action="/tasks/2" method="POST">
+        <input type="hidden" name="_method" value="DELETE">
+        <input type="submit" class='btn btn-warning' value="Delete"/>
+      </form>
+    
+  </div>
+
+</div>
+
+
+      </div>
+
+    </body>
+
+  </html>

@@ -1,3 +1,14 @@
-.btn-success {
-  background-color: #147335;
+#greeting {
+  background-color: rgba(255, 255, 255, 0.5);
+  text-center;
+}
+
+.well-sm {
+  background-color: rgba(255, 255, 255, 0.5);
+  text-center;
+}
+
+body {
+  background-color: gray;
+  font-family: "Raleway", sans-serif;
 }

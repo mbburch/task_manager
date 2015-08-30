@@ -1,30 +1,22 @@
 <!DOCTYPE html>
   <html>
-    <head>
-      <title>Task Manager</title>
-      <!-- Bootstrap -->
-      <link href="/css/bootstrap.css" rel="stylesheet">
+  <head>
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <link href="/css/styles.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Raleway|Julius+Sans+One|Amatic+SC">
+    <title>Task Manager</title>
+  </head>
 
-      <!-- My styles -->
-      <link href="/css/styles.css" rel="stylesheet">
-      <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Raleway|Julius+Sans+One|Amatic+SC">
-    </head>
-
-    <body>
-      <!-- put navbar here for each page -->
+  <body>
+    <div class='container'>
       <nav class='navbar navbar-default'>
-        <div class='container'>
-          <nav class='navbar-brand'>Task Manager</nav>
-          <a href="/" class="navbar-link navbar-text navbar-right">Home</a>
-        </div>
+        <nav class='navbar-brand'>Task Manager</nav>
+        <a href="/" class="navbar-link navbar-text navbar-right">Home</a>
       </nav>
+    </div>
 
-      <div class='container'>
-      <!-- container will give margin. use when you don't want full page width (navbar, etc outside of container) -->
-        <%= yield %>
-
-      </div>
-
-    </body>
-
+    <div class='container'>
+      <%= yield %>
+    </div>
+  </body>
   </html>

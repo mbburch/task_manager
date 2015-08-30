@@ -2,42 +2,54 @@ require_relative '../test_helper'
 
 class TaskManagerTest < Minitest::Test
 
-  def setup
-    TaskManager.create({id: 1, title: "New task", description: "This task"})
-    TaskManager.create({id: 2, title: "Another new task", description: "This other task"})
-  end
-
   def test_it_creates_a_task
-    task = TaskManager.find(1)
-    assert_equal 1, task.id
-    assert_equal "This task", task.description
-    assert_equal "New task", task.title
+    task1 = TaskManager.create({title: "New task", description: "This task"})
+    found_task = TaskManager.find(task1.id)
+    assert_equal "New task", found_task.title
+    assert_equal "This task", found_task.description
   end
 
   def test_it_finds_all_tasks
-    tasks = TaskManager.all
-    assert_equal 2, tasks.count
-    assert_equal 1, tasks.first.id
-    assert_equal "Another new task", tasks.last.title
+    TaskManager.create({title: "New task", description: "This task"})
+    TaskManager.create({title: "Another new task",
+                        description: "This other task"})
+    assert_equal 2, TaskManager.all.count
   end
 
-  def test_it_finds_specific_task
-    task = TaskManager.find(2)
-    assert_equal "Another new task", task.title
-    assert_equal "This other task", task.description
+  def test_it_finds_a_task
+    task1 = TaskManager.create({title: "New task", description: "This task"})
+    task2 = TaskManager.create({title: "Another new task",
+                                description: "This other task"})
+    found_task = TaskManager.find(task2.id)
+    assert_equal "Another new task", found_task.title
+    assert_equal "This other task", found_task.description
   end
 
-  def test_it_updates_specific_task
-    data = {title: "Updated task", description: "This updated task"}
-    updated = TaskManager.update(2, data)
-    task = TaskManager.find(2)
-    assert_equal "This updated task", task.description
+  # def test_it_can_update_a_task
+  #   task = TaskManager.update(@task_1.id, @attributes_two)
+  #   updated_task = TaskManager.find(@task_1.id)
+  #   assert_equal "New task 2", updated_task.title
+  # end
+
+  def test_it_updates_a_task
+    task_1 = TaskManager.create({title: "Another new task",
+                               description: "This other task"})
+    assert_equal "This other task", task_1.description
+    task_1.description = "This updated task"
+    TaskManager.update(task_1.id, {title: "Another new task 2",
+                               description: "This updated task"})
+    updated_task = TaskManager.find(task_1.id)
+
+    assert_equal "Another new task 2", updated_task.title
+    assert_equal "This updated task", updated_task.description
   end
 
-  def test_it_deletes_specific_task
-    deleted = TaskManager.delete(1)
+  def test_it_deletes_a_task
+    task  = TaskManager.create({title: "New task", description: "This task"})
+    task2 = TaskManager.create({title: "Another new task",
+                                description: "This other task"})
+    TaskManager.delete(task.id)
     tasks = TaskManager.all
     assert_equal 1, tasks.count
   end
-
 end

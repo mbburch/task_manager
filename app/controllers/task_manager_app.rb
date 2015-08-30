@@ -30,12 +30,15 @@ class TaskManagerApp < Sinatra::Base
 
   put '/tasks/:id' do |id|
     TaskManager.update(id.to_i, params[:task])
-    redirect "/tasks/#{id}"
+    redirect "tasks/#{id}"
   end
 
-  delete "/tasks/:id" do |id|
+  delete '/tasks/:id' do |id|
     TaskManager.delete(id.to_i)
-    redirect "/tasks"
+    redirect '/tasks'
   end
 
+  not_found do
+    erb :error
+  end
 end
